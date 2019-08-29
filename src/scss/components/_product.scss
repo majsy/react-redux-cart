@@ -25,4 +25,10 @@
   .quantity-container {
     margin-top: 15px;
   }
+
+  @include breakpoint(tablet) {
+    .quantity-container {
+      margin-top: 10px;
+    }
+  }
 }

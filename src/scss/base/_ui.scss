@@ -12,4 +12,9 @@
   &:hover {
     background-color: $blue-darker;
   }
+
+  @include breakpoint(mobile) {
+    width: 120px;
+    height: 30px;
+  }
 }
