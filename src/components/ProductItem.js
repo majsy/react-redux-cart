@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Product from './Product'
-import '../scss/components/_ProductItem.scss'
+import '../scss/components/_product-item.scss'
 
 const ProductItem = ({ product, onAddToCartClicked }) => (
-  <div className="ProductItem">
+  <div className="product-item">
+    <div className="image-container"></div>
+    
     <Product
       title={product.title}
       price={product.price}
