@@ -1,11 +1,12 @@
 import React from 'react'
 import ProductsContainer from './ProductsContainer'
 import CartContainer from './CartContainer'
+import Header from './Header'
 import '../scss/components/_App.scss'
 
 const App = () => (
   <div className="container">
-    <h2>Shopping Cart Example</h2>
+    <Header />
     <hr/>
     <ProductsContainer />
     <hr/>

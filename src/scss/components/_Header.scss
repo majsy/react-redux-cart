@@ -1,0 +1,12 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+.Header {
+  padding: 55px 0 35px;
+
+  h1 {
+    font-family: 'Chivo', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+  }
+}
