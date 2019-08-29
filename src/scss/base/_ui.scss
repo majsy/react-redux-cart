@@ -1,0 +1,15 @@
+.button {
+  width: 140px;
+  height: 40px;
+  background-color: $blue;
+  color: $white;
+  border-radius: 20px;
+
+  &.disabled {
+    opacity: 0.3;
+  }
+
+  &:hover {
+    background-color: $blue-darker;
+  }
+}
