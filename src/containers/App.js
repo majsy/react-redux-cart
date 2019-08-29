@@ -7,9 +7,7 @@ import '../scss/components/_App.scss'
 const App = () => (
   <div className="container">
     <Header />
-    <hr/>
     <ProductsContainer />
-    <hr/>
     <CartContainer />
   </div>
 )
