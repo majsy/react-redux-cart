@@ -1,5 +1,5 @@
 import React from 'react'
-import cartSvg from '../assets/cart.svg';
+import cartSvg from '../assets/cart.svg'
 import '../scss/components/_header.scss'
 
 const Header = () => (
