@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Product from './Product'
+import '../scss/components/_cart.scss'
 
 const Cart  = ({ products, total, onCheckoutClicked }) => {
   const hasProducts = products.length > 0
@@ -18,14 +19,19 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
   )
 
   return (
-    <div>
-      <h3>Your Cart</h3>
-      <div>{nodes}</div>
-      <p>Total: &#36;{total}</p>
-      <button onClick={onCheckoutClicked}
-        disabled={hasProducts ? '' : 'disabled'}>
-        Checkout
-      </button>
+    <div className="cart-overlay is-open">
+      <div className="cart-container">
+        <header className="cart-header">
+          <h3 className="title">Your Cart</h3>
+        </header>
+        
+        <div>{nodes}</div>
+        <p>Total: &#36;{total}</p>
+        <button onClick={onCheckoutClicked}
+          disabled={hasProducts ? '' : 'disabled'}>
+          Checkout
+        </button>
+      </div>
     </div>
   )
 }

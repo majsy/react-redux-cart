@@ -14,3 +14,8 @@ $grey-lighter: #D8D8D8;
 $white: #FFFFFF;
 $blue: #5E97D1;
 $blue-darker: #407FC0;
+
+// Easing
+$cubic-ease-out           :cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$sine-ease-out            :cubic-bezier(0.390, 0.575, 0.565, 1.000);
+$expo-ease-out            :cubic-bezier(0.190, 1.000, 0.220, 1.000);

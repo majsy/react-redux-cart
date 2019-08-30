@@ -4,10 +4,25 @@
 .header {
   padding: 55px 0 35px;
   border-bottom: 1px solid $grey-lighter;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  h1 {
+  .title {
     font-family: 'Chivo', sans-serif;
     font-weight: 700;
     font-size: 48px;
+  }
+
+  .cart-cta {
+    background-color: transparent;
+    font-family: 'Chivo', sans-serif;
+    font-size: 14px;
+  }
+
+  .cart-svg {
+    width: 17px;
+    height: auto;
+    margin-right: 6px;
   }
 }
