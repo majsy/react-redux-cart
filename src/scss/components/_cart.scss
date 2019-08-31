@@ -20,7 +20,6 @@
   .cart-container {
     width: 60%;
     max-width: 780px;
-    min-height: 650px;
     background-color: $white;
     border-radius: 10px;
     position: absolute;
@@ -54,10 +53,7 @@
 
   .wrapper {
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    height: 400px;
     overflow-y: scroll;
   }
   
@@ -81,7 +77,6 @@
     .cart-container {
       padding: 0 $global-gutter-tablet;
       width: 70%;
-      min-height: 500px;
     }
 
     .empty-cart-content {
@@ -109,6 +104,10 @@
       width: 100%;
       border-radius: 0;
       padding: 0 $global-gutter-mobile;
+    }
+
+    .wrapper {
+      height: 450px;
     }
     
     .cart-header {

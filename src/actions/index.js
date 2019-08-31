@@ -1,6 +1,16 @@
 import shop from '../api/shop'
 import * as types from '../constants/ActionTypes'
 
+export const openCart = () => dispatch => dispatch({
+  type: types.OPEN_CART,
+  isOpen: true
+})
+
+export const closeCart = () => dispatch => dispatch({
+  type: types.OPEN_CART,
+  isOpen: false
+})
+
 const receiveProducts = products => ({
   type: types.RECEIVE_PRODUCTS,
   products: products

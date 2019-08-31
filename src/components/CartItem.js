@@ -21,7 +21,7 @@ const CartItem = ({ title, price, quantity, inventory, onAddToCartClicked, child
     </div>
 
     <div className="quantity-cta">
-      <button
+      <button className="button-half"
         disabled={quantity <= 0 ? '' : 'disabled'}>-
       </button>
       <div className="quantity">{quantity}</div>

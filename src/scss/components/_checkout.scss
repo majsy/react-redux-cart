@@ -2,10 +2,10 @@
 @import '../base/mixins';
 
 .checkout {
-  position: absolute;
-  bottom: 80px;
-  left: 80px;
-  width: calc(100% - 160px);
+  width: 100%;
+  padding-bottom: 30px;
+  margin-top: 20px;
+  margin: 0 auto;
   font-family: 'Chivo', sans-serif;
 
   .upper-row {
@@ -21,15 +21,14 @@
   }
 
   @include breakpoint(tablet) {
-    bottom: 50px;
-    left: 50px;
-    width: calc(100% - 100px);
+
   }
 
   @include breakpoint(mobile) {
+    position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    padding-bottom: 0;
 
     .upper-row {
       margin: 0 15px;
@@ -39,6 +38,7 @@
     .button {
       width: 100%;
       border-radius: 0;
+      height: 45px;
     }
   }
 }

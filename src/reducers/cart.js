@@ -1,12 +1,23 @@
 import {
   ADD_TO_CART,
   CHECKOUT_REQUEST,
-  CHECKOUT_FAILURE
+  CHECKOUT_FAILURE,
+  OPEN_CART
 } from '../constants/ActionTypes'
 
 const initialState = {
   addedIds: [],
-  quantityById: {}
+  quantityById: {},
+  isOpen: false
+}
+
+const isOpen = (state = initialState.isOpen, action) => {
+  switch (action.type) {
+    case OPEN_CART:
+      return action.isOpen
+    default:
+      return state
+  }
 }
 
 const addedIds = (state = initialState.addedIds, action) => {
@@ -46,6 +57,7 @@ const cart = (state = initialState, action) => {
       return action.cart
     default:
       return {
+        isOpen: isOpen(state.isOpen, action),
         addedIds: addedIds(state.addedIds, action),
         quantityById: quantityById(state.quantityById, action)
       }
