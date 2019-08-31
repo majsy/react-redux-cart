@@ -1,5 +1,6 @@
 import {
   ADD_TO_CART,
+  REMOVE_FROM_CART,
   CHECKOUT_REQUEST,
   CHECKOUT_FAILURE,
   OPEN_CART
@@ -27,6 +28,11 @@ const addedIds = (state = initialState.addedIds, action) => {
         return state
       }
       return [ ...state, action.productId ]
+    case REMOVE_FROM_CART:
+      if (state.indexOf(action.productId) === -1) {
+        return state
+      }
+      return state.filter((productId)=> productId !== action.productId)
     default:
       return state
   }

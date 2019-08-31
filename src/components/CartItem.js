@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import '../scss/components/_cart-item.scss'
+import { removeFromCart, addToCart } from '../actions'
+import { connect } from 'react-redux'
 
-const CartItem = ({ title, price, quantity, inventory, onAddToCartClicked, children }) => (
+const CartItem = ({ title, price, productId, quantity, inventory, addToCart, removeFromCart, children }) => (
   <div className="cart-item">
     <div className="item-details">
       <div className="image-container">
@@ -22,11 +24,12 @@ const CartItem = ({ title, price, quantity, inventory, onAddToCartClicked, child
 
     <div className="quantity-cta">
       <button className="button-half"
+        onClick={()=> removeFromCart(productId)}
         disabled={quantity <= 0 ? '' : 'disabled'}>-
       </button>
       <div className="quantity">{quantity}</div>
       <button className="button-half"
-        onClick={onAddToCartClicked} 
+        onClick={()=> addToCart(productId)} 
         disabled={inventory > 0 ? '' : 'disabled'}>+
       </button>
 
@@ -39,7 +42,11 @@ CartItem.propTypes = {
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   inventory: PropTypes.number.isRequired,
-  onAddToCartClicked: PropTypes.func
+  addToCart: PropTypes.func,
+  removeFromCart: PropTypes.func
 }
 
-export default CartItem
+export default connect(
+  null,
+  { removeFromCart, addToCart }
+)(CartItem)

@@ -8,11 +8,19 @@
   max-width: 1440px;
   margin: 0 auto;
 
+  .product-list {
+    padding-bottom: 50px;
+  }
+
   @include breakpoint(tablet) {
     padding: 0 $global-gutter-tablet;
   }
 
   @include breakpoint(mobile) {
     padding: 0 $global-gutter-mobile;
+
+    .product-list {
+      padding-bottom: 30px;
+    }
   }
 }

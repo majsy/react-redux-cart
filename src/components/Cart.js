@@ -20,6 +20,7 @@ const Cart  = ({ products, total, onCheckoutClicked, isOpen, closeCart }) => {
         price={product.price}
         quantity={product.quantity}
         key={product.id}
+        productId={product.id}
         inventory={product.inventory}
       />
     )
