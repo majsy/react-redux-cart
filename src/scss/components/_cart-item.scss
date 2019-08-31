@@ -48,6 +48,11 @@
       justify-content: space-between;
       font-family: 'Chivo', sans-serif;
     }
+
+    .price {
+      font-weight: 300;
+      color: $grey-light;
+    }
   }
 
   .quantity-cta {
@@ -61,18 +66,19 @@
       align-items: center;
       justify-content: center;
       height: 100%;
-      font-size: 20px;
     }
 
     .quantity {
       width: 90px;
-      border: 1px solid $grey-lighter;
+      border: 1px solid #F2F4F7;
+      font-size: 18px;
     }
 
     .button-half {
       width: 75px;
-      background-color: $grey-lighter;
+      background-color: #F2F4F7;
       color: $grey-dark;
+      font-size: 24px;
 
       &:first-child {
         border-bottom-left-radius: 20px;
@@ -87,8 +93,19 @@
   }
 
   @include breakpoint(mobile) {
+    .upper-container {
+      .title-container {
+        flex-direction: column;
+      }
+
+      .price {
+        margin-top: 8px;
+      }
+    }
+
     .quantity-cta {
       height: 40px;
+      max-width: 300px;
 
       .button-half {
         width: calc(50% - 45px);
