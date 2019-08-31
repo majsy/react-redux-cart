@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import '../scss/components/_product.scss'
 
 const Product = ({ price, inventory, title }) => (
-  <div className={`product`}>
+  <div className="product">
 
     <div className="title-container">
       <h2 className="title">{title}</h2>

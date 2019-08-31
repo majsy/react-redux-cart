@@ -8,6 +8,9 @@ import '../scss/components/_cart.scss'
 
 const Cart  = ({ products, total, onCheckoutClicked }) => {
   const hasProducts = products.length > 0
+
+  console.log(products)
+
   const nodes = hasProducts ? (
     products.map(product =>
       <CartItem
@@ -15,6 +18,7 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
         price={product.price}
         quantity={product.quantity}
         key={product.id}
+        inventory={product.inventory}
       />
     )
   ) : (
@@ -28,7 +32,7 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
   : null
 
   return (
-    <div className="cart-overlay is-open">
+    <div className="cart-overlay">
       <div className="cart-container">
         <header className="cart-header">
           <h3 className="title">Your Cart</h3>
