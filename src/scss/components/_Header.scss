@@ -25,4 +25,10 @@
     height: auto;
     margin-right: 6px;
   }
+
+  @include breakpoint(mobile) {
+    .title {
+      font-size: 40px;
+    }
+  }
 }

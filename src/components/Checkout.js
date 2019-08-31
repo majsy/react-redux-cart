@@ -7,11 +7,15 @@ const Checkout  = ({ total, products, onCheckoutClicked }) => {
 
   return (
     <div className="checkout">
-      <p>Total: &#36;{total}</p>
-      <button onClick={onCheckoutClicked}
-        disabled={!isEmpty ? '' : 'disabled'}>
-        Checkout
-      </button>
+      <div className="upper-row">
+        <p>Total:</p> <p>&#36;{total}</p>
+      </div>
+      <div className="lower-row">
+        <button className="button" onClick={onCheckoutClicked}
+          disabled={!isEmpty ? '' : 'disabled'}>
+          Checkout
+        </button>
+      </div>
     </div>
   )
 }

@@ -2,5 +2,43 @@
 @import '../base/mixins';
 
 .checkout {
-  
+  position: absolute;
+  bottom: 80px;
+  left: 80px;
+  width: calc(100% - 160px);
+  font-family: 'Chivo', sans-serif;
+
+  .upper-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-top: 1px solid $grey-lighter;
+  }
+
+  .lower-row {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @include breakpoint(tablet) {
+    bottom: 50px;
+    left: 50px;
+    width: calc(100% - 100px);
+  }
+
+  @include breakpoint(mobile) {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    .upper-row {
+      margin: 0 15px;
+      padding: 20px 0 30px;
+    }
+
+    .button {
+      width: 100%;
+      border-radius: 0;
+    }
+  }
 }
