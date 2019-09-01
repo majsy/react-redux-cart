@@ -4,7 +4,7 @@ import '../scss/components/_cart-item.scss'
 import { removeFromCart, addToCart } from '../actions'
 import { connect } from 'react-redux'
 
-const CartItem = ({ title, price, productId, quantity, inventory, addToCart, removeFromCart, children }) => (
+const CartItem = ({ title, price, productId, inventory, addToCart, removeFromCart, quantityById, children }) => (
   <div className="cart-item">
     <div className="item-details">
       <div className="image-container">
@@ -18,16 +18,16 @@ const CartItem = ({ title, price, productId, quantity, inventory, addToCart, rem
           <h3 className="price">&#36;{price}</h3>
         </div>
 
-        Remove
+        <button onClick={()=> removeFromCart(productId)}>Remove</button>
       </div>
     </div>
 
     <div className="quantity-cta">
       <button className="button-half"
         onClick={()=> removeFromCart(productId)}
-        disabled={quantity <= 0 ? '' : 'disabled'}>-
+        disabled={quantityById[productId] === 0 ? 'disabled' : ''}>-
       </button>
-      <div className="quantity">{quantity}</div>
+      <div className="quantity">{quantityById[productId]}</div>
       <button className="button-half"
         onClick={()=> addToCart(productId)} 
         disabled={inventory > 0 ? '' : 'disabled'}>+
@@ -46,7 +46,11 @@ CartItem.propTypes = {
   removeFromCart: PropTypes.func
 }
 
+const mapStateToProps = state => ({
+  quantityById: state.cart.quantityById
+})
+
 export default connect(
-  null,
+  mapStateToProps,
   { removeFromCart, addToCart }
 )(CartItem)
