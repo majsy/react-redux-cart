@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import '../scss/components/_cart-item.scss'
-import { removeFromCart, addToCart } from '../actions'
+import { removeFromCart, addToCart, reduceItemQuantity } from '../actions'
 import { connect } from 'react-redux'
 
-const CartItem = ({ title, price, productId, inventory, addToCart, removeFromCart, quantityById, children }) => (
+const CartItem = ({ title, price, productId, inventory, addToCart, removeFromCart, reduceItemQuantity, quantityById, children }) => (
   <div className="cart-item">
     <div className="item-details">
       <div className="image-container">
@@ -18,13 +18,13 @@ const CartItem = ({ title, price, productId, inventory, addToCart, removeFromCar
           <h3 className="price">&#36;{price}</h3>
         </div>
 
-        <button onClick={()=> removeFromCart(productId)}>Remove</button>
+        <button className="remove-btn" onClick={()=> removeFromCart(productId)}>Remove</button>
       </div>
     </div>
 
     <div className="quantity-cta">
       <button className="button-half"
-        onClick={()=> removeFromCart(productId)}
+        onClick={()=> reduceItemQuantity(productId)}
         disabled={quantityById[productId] === 0 ? 'disabled' : ''}>-
       </button>
       <div className="quantity">{quantityById[productId]}</div>
@@ -43,7 +43,8 @@ CartItem.propTypes = {
   price: PropTypes.number.isRequired,
   inventory: PropTypes.number.isRequired,
   addToCart: PropTypes.func,
-  removeFromCart: PropTypes.func
+  removeFromCart: PropTypes.func,
+  reduceItemQuantity: PropTypes.func
 }
 
 const mapStateToProps = state => ({
@@ -52,5 +53,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { removeFromCart, addToCart }
+  { removeFromCart, addToCart, reduceItemQuantity }
 )(CartItem)

@@ -38,6 +38,11 @@ export const removeFromCart = productId => dispatch => dispatch({
   productId
 })
 
+export const reduceItemQuantity = productId => dispatch => dispatch({
+  type: types.REDUCE_ITEM_QUANTITY,
+  productId
+})
+
 export const checkout = products => (dispatch, getState) => {
   const { cart } = getState()
 
