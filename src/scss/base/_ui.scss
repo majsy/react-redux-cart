@@ -2,6 +2,7 @@
   width: 140px;
   height: 40px;
   background-color: $blue;
+  padding: 0;
   color: $white;
   border-radius: 20px;
   opacity: 1;
@@ -10,6 +11,7 @@
 
   &.disabled {
     opacity: 0.3;
+    pointer-events: none;
   }
 
   &:hover {

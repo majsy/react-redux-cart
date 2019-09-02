@@ -53,6 +53,13 @@
       font-weight: 300;
       color: $grey-light;
     }
+    
+    .remove-btn {
+      width: 55px;
+      color: $red;
+      font-size: 14px;
+      padding: 0;
+    }
   }
 
   .quantity-cta {
@@ -79,6 +86,15 @@
       background-color: #F2F4F7;
       color: $grey-dark;
       font-size: 24px;
+
+      &.disabled {
+        opacity: 0.3;
+        pointer-events: none;
+      }
+    
+      &:hover {
+        background-color: $blue;
+      }
 
       &:first-child {
         border-bottom-left-radius: 20px;

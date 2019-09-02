@@ -22,6 +22,7 @@ const Checkout  = ({ total, products, onCheckoutClicked }) => {
 
 Checkout.propTypes = {
   total: PropTypes.string,
+  products: PropTypes.array,
   onCheckoutClicked: PropTypes.func
 }
 

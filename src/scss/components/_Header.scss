@@ -18,12 +18,27 @@
     background-color: transparent;
     font-family: 'Chivo', sans-serif;
     font-size: 14px;
+    position: relative;
+
+    span {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $blue;
+      border-radius: 50%;
+      color: $white;
+    }
   }
 
   .cart-svg {
-    width: 17px;
+    width: 35px;
     height: auto;
-    margin-right: 6px;
   }
 
   @include breakpoint(mobile) {
@@ -34,6 +49,10 @@
     .title {
       font-size: 36px;
       margin-bottom: 8px;
+    }
+
+    .cart-svg {
+      width: 25px;
     }
   }
 }
