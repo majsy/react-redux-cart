@@ -14,8 +14,8 @@ const Cart  = ({ products, total, onCheckoutClicked, isOpen, closeCart }) => {
   const nodes = hasProducts ? (
     products.map(product =>
       <CartItem
-        title={product.title}
-        price={product.price}
+        title={product.productTitle}
+        price={product.price.value}
         key={product.id}
         productId={product.id}
         inventory={product.inventory}

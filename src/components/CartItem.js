@@ -24,7 +24,9 @@ const CartItem = ({ title, price, productId, inventory, addToCart, removeFromCar
 
     <div className="quantity-cta">
       <button className="button-half"
-        onClick={()=> reduceItemQuantity(productId)}
+        onClick={()=> { quantityById[productId] === 1 ? 
+          removeFromCart(productId) : 
+          reduceItemQuantity(productId)}}
         disabled={quantityById[productId] === 0 ? 'disabled' : ''}>-
       </button>
       <div className="quantity">{quantityById[productId]}</div>

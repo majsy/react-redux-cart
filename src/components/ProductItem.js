@@ -13,8 +13,8 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
 
     <div className="details-container">
       <Product
-        title={product.title}
-        price={product.price}
+        title={product.productTitle}
+        price={product.price.value}
         inventory={product.inventory} />
 
       <button className="button"
@@ -29,8 +29,8 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
 
 ProductItem.propTypes = {
   product: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    productTitle: PropTypes.string.isRequired,
+    price: PropTypes.object.isRequired,
     inventory: PropTypes.number.isRequired
   }).isRequired,
   onAddToCartClicked: PropTypes.func.isRequired

@@ -9,7 +9,7 @@
   text-transform: uppercase;
   transition: all 250ms $cubic-ease-out;
 
-  &.disabled {
+  &[disabled] {
     opacity: 0.3;
     pointer-events: none;
   }

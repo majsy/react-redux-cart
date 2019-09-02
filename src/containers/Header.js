@@ -11,7 +11,7 @@ const Header = ({ openCart, totalItems }) => (
     <h1 className="title">Acme Store</h1>
     <button className="cart-cta" onClick={openCart}>
       <img src={cartSvg} className="cart-svg" />
-      { totalItems > 0 ? <span>{totalItems}</span> : null }
+      { totalItems !== 0 ? <span>{totalItems}</span> : null }
     </button>
   </header>
 )
