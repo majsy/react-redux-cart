@@ -86,6 +86,7 @@
       background-color: #F2F4F7;
       color: $grey-dark;
       font-size: 24px;
+      transition: all 250ms $cubic-ease-out;
 
       &[disabled] {
         opacity: 0.3;

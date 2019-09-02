@@ -14,6 +14,10 @@ To start a development server:
 yarn start
 ```
 
+## Process
 
+###### Responsive Layout
+
+My approach for the layout was to add height/width to the container elements and give the child elements fluid sizes so I mainly had to update the container elements size depending on the breakpoint. 
 
 

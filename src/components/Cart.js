@@ -1,12 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import CartItem from './CartItem'
+import CartItem from '../containers/CartItem'
 import Checkout from './Checkout'
 import cartSvg from '../assets/cart.svg'
 import closeBtn from '../assets/close-btn.svg'
 import '../scss/components/_cart.scss'
-import { closeCart } from '../actions'
-import { connect } from 'react-redux'
 
 const Cart  = ({ products, total, onCheckoutClicked, isOpen, closeCart }) => {
   const hasProducts = products.length > 0
@@ -57,12 +55,5 @@ Cart.propTypes = {
   onCheckoutClicked: PropTypes.func
 }
 
-const mapStateToProps = state => ({
-  isOpen: state.cart.isOpen
-})
-
-export default connect(
-  mapStateToProps,
-  { closeCart }
-)(Cart)
+export default Cart
 

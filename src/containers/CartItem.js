@@ -4,7 +4,7 @@ import '../scss/components/_cart-item.scss'
 import { removeFromCart, addToCart, reduceItemQuantity } from '../actions'
 import { connect } from 'react-redux'
 
-const CartItem = ({ title, price, productId, inventory, addToCart, removeFromCart, reduceItemQuantity, quantityById, children }) => (
+const CartItem = ({ title, price, productId, inventory, addToCart, removeFromCart, reduceItemQuantity, quantityById }) => (
   <div className="cart-item">
     <div className="item-details">
       <div className="image-container">
@@ -34,8 +34,6 @@ const CartItem = ({ title, price, productId, inventory, addToCart, removeFromCar
         onClick={()=> addToCart(productId)} 
         disabled={inventory > 0 ? '' : 'disabled'}>+
       </button>
-
-      {children}
     </div>
   </div>
 )
